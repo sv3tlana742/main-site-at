@@ -1,5 +1,13 @@
 package lesson_1;
 
+import lesson_1.competitor.Cat;
+import lesson_1.competitor.Competitor;
+import lesson_1.competitor.Man;
+import lesson_1.competitor.Robot;
+import lesson_1.obstacles.Obstacle;
+import lesson_1.obstacles.Treadmill;
+import lesson_1.obstacles.Wall;
+
 public class Start {
     public static void main(String[] args) {
         System.out.println("*** Task 2 ***");

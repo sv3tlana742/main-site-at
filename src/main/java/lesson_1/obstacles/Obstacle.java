@@ -1,6 +1,6 @@
-package lesson_1;
+package lesson_1.obstacles;
 
-interface Obstacle {
+public interface Obstacle {
     int TYPE_TREADMILL = 1;
     int TYPE_WALL = 2;
 

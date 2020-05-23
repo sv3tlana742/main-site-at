@@ -1,17 +1,17 @@
-package lesson_1;
+package lesson_1.obstacles;
 
-class Treadmill implements Obstacle {
+public class Treadmill implements Obstacle {
     private int length;
 
     public int getType() {
         return Obstacle.TYPE_TREADMILL;
     }
 
-    Treadmill (int length) {
+    public Treadmill(int length) {
         this.length = length;
     }
 
-    int getLength() {
+    public int getLength() {
         return length;
     }
 }

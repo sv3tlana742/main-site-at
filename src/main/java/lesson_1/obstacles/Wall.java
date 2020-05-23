@@ -1,17 +1,17 @@
-package lesson_1;
+package lesson_1.obstacles;
 
-class Wall implements Obstacle {
+public class Wall implements Obstacle {
     private float height;
 
     public int getType() {
         return Obstacle.TYPE_WALL;
     }
 
-    Wall (float height) {
+    public Wall(float height) {
         this.height = height;
     }
 
-    float getHeight() {
+    public float getHeight() {
         return height;
     }
 }

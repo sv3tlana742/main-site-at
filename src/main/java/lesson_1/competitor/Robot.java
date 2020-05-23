@@ -1,11 +1,15 @@
-package lesson_1;
+package lesson_1.competitor;
 
-class Cat implements Competitor {
-    private String name = "Кот";
-    int skillRun;
-    float skillJump;
 
-    Cat (int skillRun, float skillJump) {
+import lesson_1.obstacles.Treadmill;
+import lesson_1.obstacles.Wall;
+
+public class Robot implements Competitor {
+    private String name = "Робот";
+    private int skillRun;
+    private float skillJump;
+
+    public Robot(int skillRun, float skillJump) {
         this.skillRun = skillRun;
         this.skillJump = skillJump;
     }

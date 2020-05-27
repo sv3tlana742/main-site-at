@@ -1,10 +1,10 @@
-package lesson_1.obstacles;
+package ru.geekbrains.main.site.at.obstacles;
 
 public class Treadmill implements Obstacle {
     private int length;
 
     public int getType() {
-        return Obstacle.TYPE_TREADMILL;
+        return TYPE_TREADMILL;
     }
 
     public Treadmill(int length) {

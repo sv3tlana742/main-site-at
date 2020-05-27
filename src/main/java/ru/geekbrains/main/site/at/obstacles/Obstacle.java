@@ -1,4 +1,4 @@
-package lesson_1.obstacles;
+package ru.geekbrains.main.site.at.obstacles;
 
 public interface Obstacle {
     int TYPE_TREADMILL = 1;

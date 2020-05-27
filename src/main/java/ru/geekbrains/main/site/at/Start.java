@@ -1,12 +1,12 @@
-package lesson_1;
+package ru.geekbrains.main.site.at;
 
-import lesson_1.competitor.Cat;
-import lesson_1.competitor.Competitor;
-import lesson_1.competitor.Man;
-import lesson_1.competitor.Robot;
-import lesson_1.obstacles.Obstacle;
-import lesson_1.obstacles.Treadmill;
-import lesson_1.obstacles.Wall;
+import ru.geekbrains.main.site.at.obstacles.Treadmill;
+import ru.geekbrains.main.site.at.obstacles.Wall;
+import ru.geekbrains.main.site.at.competitor.Cat;
+import ru.geekbrains.main.site.at.competitor.Competitor;
+import ru.geekbrains.main.site.at.competitor.Man;
+import ru.geekbrains.main.site.at.competitor.Robot;
+import ru.geekbrains.main.site.at.obstacles.Obstacle;
 
 public class Start {
     public static void main(String[] args) {

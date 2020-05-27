@@ -1,10 +1,10 @@
-package lesson_1.obstacles;
+package ru.geekbrains.main.site.at.obstacles;
 
 public class Wall implements Obstacle {
     private float height;
 
     public int getType() {
-        return Obstacle.TYPE_WALL;
+        return TYPE_WALL;
     }
 
     public Wall(float height) {

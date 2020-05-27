@@ -1,7 +1,7 @@
-package lesson_1.competitor;
+package ru.geekbrains.main.site.at.competitor;
 
-import lesson_1.obstacles.Treadmill;
-import lesson_1.obstacles.Wall;
+import ru.geekbrains.main.site.at.obstacles.Treadmill;
+import ru.geekbrains.main.site.at.obstacles.Wall;
 
 public class Cat implements Competitor {
     private String name = "Кот";

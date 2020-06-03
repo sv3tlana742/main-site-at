@@ -2,11 +2,16 @@ package ru.geekbrains.main.site.at;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.geekbrains.main.site.at.Base.BaseTest;
+
+import java.util.stream.Stream;
 
 public class NavigationTest extends BaseTest {
 
@@ -20,54 +25,24 @@ public class NavigationTest extends BaseTest {
 
         super.after();
     }
-
-    @Test
-    void courses() {
-
-        WebElement buttonCourses = driver.findElement(By.cssSelector("[id='nav'] [href='/courses']"));
+    @DisplayName("Проверка работы меню навигации")
+    @ParameterizedTest
+    @MethodSource("navigationProvider")
+    void navigation (String href, String title) {
+        WebElement buttonCourses = driver.findElement(By.cssSelector("[id='nav'] [href='/" + href + "']"));
         buttonCourses.click();
         WebElement textNamePage = driver.findElement(By.cssSelector("h2[class=\"gb-header__title\"]"));
-        Assertions.assertEquals("Курсы", textNamePage.getText());
+        Assertions.assertEquals(title, textNamePage.getText());
     }
 
-//        вебинары href="/events"
-    @Test
-    void events() {
-        WebElement buttonEvents = driver.findElement(By.cssSelector("[id='nav'] [href='/events']"));
-        buttonEvents.click();
-        WebElement textNamePage = driver.findElement(By.cssSelector("h2[class='gb-header__title']"));
-        Assertions.assertEquals("Вебинары", textNamePage.getText());
-    }
-//        Форум href="/topics"
-    @Test
-    void topics() {
-        WebElement topics = driver.findElement(By.cssSelector("[id='nav'] [href='/topics']"));
-        topics.click();
-        WebElement textNamePage = driver.findElement(By.cssSelector("h2[class='gb-header__title']"));
-        Assertions.assertEquals("Форум", textNamePage.getText());
-    }
-//        блог href="/posts"
-    @Test
-    void posts() {
-        WebElement posts = driver.findElement(By.cssSelector("[id='nav'] [href='/posts']"));
-        posts.click();
-        WebElement textNamePage = driver.findElement(By.cssSelector("h2[class='gb-header__title']"));
-        Assertions.assertEquals("Блог", textNamePage.getText());
-    }
-//        тесты href="/tests"
-    @Test
-    void tests() {
-        WebElement tests = driver.findElement(By.cssSelector("[id='nav'] [href='/tests']"));
-        tests.click();
-        WebElement textNamePage = driver.findElement(By.cssSelector("h2[class='gb-header__title']"));
-        Assertions.assertEquals("Тесты", textNamePage.getText());
-    }
-//        карьера href="/career"
-    @Test
-    void career() {
-        WebElement career = driver.findElement(By.cssSelector("[id='nav'] [href='/career']"));
-        career.click();
-        WebElement textNamePage = driver.findElement(By.cssSelector("h2[class='gb-header__title']"));
-        Assertions.assertEquals("Карьера", textNamePage.getText());
+    static Stream<Arguments>navigationProvider(){
+        return Stream.of(
+                Arguments.of("courses", "Курсы"),
+                Arguments.of("events", "Вебинары"),
+                Arguments.of("topics", "Форум"),
+                Arguments.of("posts", "Блог"),
+                Arguments.of("tests", "Тесты"),
+                Arguments.of("career", "Карьера")
+        );
     }
 }

@@ -92,16 +92,5 @@ public class SearchTest extends BaseTest {
                 companyGB.getText(),
                 containsString("GeekBrains")
         );
-
-
-//        Assertions.assertTrue(Integer.parseInt(professionsCount.getText()) >= 2);
-//        Assertions.assertTrue(Integer.parseInt(coursesCount.getText()) > 15);
-//        int eventsCountInt = Integer.parseInt(eventsCount.getText());
-//        Assertions.assertTrue(eventsCountInt > 180 && eventsCountInt < 300);
-//        Assertions.assertEquals("Java Junior. Что нужно знать для успешного собеседования?", eventFirst.getText());
-//        Assertions.assertTrue(Integer.parseInt(blogsCount.getText()) > 300);
-//        Assertions.assertNotEquals(350, Integer.parseInt(topicCount.getText()));
-//        Assertions.assertNotEquals(0, Integer.parseInt(testsCount.getText()));
-//        Assertions.assertTrue(companyGB.getText().contains("GeekBrains"));
     }
 }

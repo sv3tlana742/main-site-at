@@ -1,14 +1,19 @@
 package ru.geekbrains.main.site.at.site;
 
+import io.qameta.allure.Feature;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.geekbrains.main.site.at.page.SearchPage;
-import ru.geekbrains.main.site.at.site.Base.BaseTest;
+import ru.geekbrains.main.site.at.site.base.BaseTest;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class SearchTest extends BaseTest {
+@Feature("Поиск")
 
+public class SearchWorkTest extends BaseTest {
+
+    @DisplayName("Проверка отображения блоко на странице")
     @Test
     void partitions() {
         SearchPage searchPage = new SearchPage(driver);
@@ -21,7 +26,7 @@ public class SearchTest extends BaseTest {
         searchPage.checkPartitionExists("Тесты");
         searchPage.checkPartitionExists("Проекты и компании");
     }
-
+    @DisplayName("Проверка отображения колличества контента")
     @Test
     void partitionsData() {
         SearchPage searchPage = new SearchPage(driver);

@@ -1,5 +1,6 @@
 package ru.geekbrains.main.site.at.page;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -42,7 +43,7 @@ public class SearchPage {
     @FindBy(xpath = ".//header/h2[text()='Проекты и компании']/../../following-sibling::*//*[contains(text(),\"GeekBrains\")]")
     private WebElement companyGB;
 
-    private final WebDriverWait wait10second;
+    private WebDriverWait wait10second;
 
     public SearchPage(WebDriver driver) {
         WebElement buttonSearch = driver.findElement(By.cssSelector("[class=\"show-search-form\"] [class=\"svg-icon icon-search \"]"));
@@ -50,14 +51,14 @@ public class SearchPage {
         WebElement inputSearch = driver.findElement(By.cssSelector("[class=\"search-panel__search-field\"]"));
         inputSearch.sendKeys("java");
 
-        new WebDriverWait(driver, 30)
-                .until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("[id=\"professions\"] h2")), "Профессии"));
+        new WebDriverWait(driver, 10)
+            .until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("[id=\"professions\"] h2")), "Профессии"));
 
         PageFactory.initElements(driver, this);
 
         wait10second = new WebDriverWait(driver, 10);
     }
-
+    @Step("Ожидание открытия страницы")
     public void checkPartitionExists(String name) {
         wait10second.until(ExpectedConditions.textToBePresentInElement(getPartition(name), name));
     }
@@ -70,6 +71,7 @@ public class SearchPage {
         return companyGB.getText();
     }
 
+    @Step("Приведение элементов страницы поиска к типу String")
     public int getPartitionCount(String name) {
         WebElement element;
 

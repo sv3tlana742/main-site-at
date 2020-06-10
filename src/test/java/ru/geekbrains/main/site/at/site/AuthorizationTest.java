@@ -2,7 +2,7 @@ package ru.geekbrains.main.site.at.site;
 
 import org.junit.jupiter.api.Test;
 import ru.geekbrains.main.site.at.page.AuthorizationPage;
-import ru.geekbrains.main.site.at.site.Base.BaseTest;
+import ru.geekbrains.main.site.at.site.base.BaseTest;
 
 public class AuthorizationTest extends BaseTest {
 
